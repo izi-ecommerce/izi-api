@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__version__ = "1.4.1"
+__version__ = "2.0.0"
 
 
 setup(
@@ -17,6 +17,7 @@ setup(
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: Unix',
@@ -29,8 +30,8 @@ setup(
         'Topic :: Software Development :: Libraries :: Application Frameworks',
     ],
     keywords='',
-    author='Lars van de Kerkhof, Martijn Jacobs',
-    author_email='lars@permanentmarkers.nl, martijn@devopsconsulting.nl',
+    author='Daniel Do',
+    author_email='dotiendiep@gmail.com',
     url='https://github.com/izi-ecommerce/izi-api',
     license='BSD',
     # include all packages in the egg, except the test package.
@@ -44,8 +45,8 @@ setup(
     # specify dependencies
     install_requires=[
         'setuptools',
-        'izi-core>=1.5.1',
-        'djangorestframework>=3.4',
+        'izi-core>=2.0.0',
+        'djangorestframework>=3.7',
         'six'
     ],
     # mark test target to require extras.

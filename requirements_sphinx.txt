@@ -1,5 +1,5 @@
-izi-core==1.5.3
+# izi-core>=2.0.0
 djangorestframework>=3.7.0
 django-nose
 django-haystack>=2.7.0.dev
-Django>=1.11,<2.0
+Django>=1.11,<2.2
