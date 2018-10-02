@@ -1,0 +1,12 @@
+[paths]
+source = iziapi
+
+[run]
+omit = 
+   *iziapi/migrations*
+   *iziapi/settings/*
+   *sandbox/*
+   *iziapi/tests/*
+   *site-packages*
+   *demosite/*
+

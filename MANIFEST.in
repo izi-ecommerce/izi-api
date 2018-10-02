@@ -1,0 +1,6 @@
+include *.rst
+include LICENSE
+include Makefile
+recursive-include iziapi *.py
+recursive-include iziapi *.xml
+recursive-include sandbox *.py
