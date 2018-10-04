@@ -1,7 +1,7 @@
 ====================
-Oscar API Middleware
+IZI API Middleware
 ====================
-Oscar API ships with some useful middelware classes for session management, to restrict access to your API and make sure that you can mix an Oscar stand-alone website and the API.
+IZI API ships with some useful middelware classes for session management, to restrict access to your API and make sure that you can mix an IZI stand-alone website and the API.
 
 Basket Middleware
 =================
@@ -15,7 +15,7 @@ regular izi views (also for anonymous users).
 Header Session Middleware
 =========================
 
-This middleware is very useful when sessions are managed by an external website which commuicates with Oscar API.
+This middleware is very useful when sessions are managed by an external website which commuicates with IZI API.
 
 .. class:: iziapi.middleware.HeaderSessionMiddleware
 

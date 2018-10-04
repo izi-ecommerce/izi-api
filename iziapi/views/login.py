@@ -26,7 +26,7 @@ class LoginView(APIView):
 
     POST(username, password):
     1. The user will be authenticated. The next steps will only be
-       performed is login is succesful. Logging in logged in users results in
+       performed is login is successfully. Logging in logged in users results in
        405.
     2. The anonymous cart will be merged with the private cart associated with
        that authenticated user.

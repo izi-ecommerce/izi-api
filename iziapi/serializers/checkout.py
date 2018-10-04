@@ -18,8 +18,8 @@ from iziapi.serializers import (
     OfferDiscountSerializer
 )
 from iziapi.utils import (
-    OscarHyperlinkedModelSerializer,
-    OscarModelSerializer,
+    IZIHyperlinkedModelSerializer,
+    IZIModelSerializer,
     overridable
 )
 from iziapi.serializers.fields import TaxIncludedDecimalField
@@ -54,19 +54,19 @@ class PriceSerializer(serializers.Serializer):
         decimal_places=2, max_digits=12, required=False)
 
 
-class CountrySerializer(OscarHyperlinkedModelSerializer):
+class CountrySerializer(IZIHyperlinkedModelSerializer):
     class Meta:
         model = Country
         fields = '__all__'
 
 
-class ShippingAddressSerializer(OscarHyperlinkedModelSerializer):
+class ShippingAddressSerializer(IZIHyperlinkedModelSerializer):
     class Meta:
         model = ShippingAddress
         fields = '__all__'
 
 
-class InlineShippingAddressSerializer(OscarModelSerializer):
+class InlineShippingAddressSerializer(IZIModelSerializer):
     country = serializers.HyperlinkedRelatedField(
         view_name='country-detail', queryset=Country.objects)
 
@@ -75,13 +75,13 @@ class InlineShippingAddressSerializer(OscarModelSerializer):
         fields = '__all__'
 
 
-class BillingAddressSerializer(OscarHyperlinkedModelSerializer):
+class BillingAddressSerializer(IZIHyperlinkedModelSerializer):
     class Meta:
         model = BillingAddress
         fields = '__all__'
 
 
-class InlineBillingAddressSerializer(OscarModelSerializer):
+class InlineBillingAddressSerializer(IZIModelSerializer):
     country = serializers.HyperlinkedRelatedField(
         view_name='country-detail', queryset=Country.objects)
 
@@ -107,7 +107,7 @@ class ShippingMethodSerializer(serializers.Serializer):
         return PriceSerializer(price).data
 
 
-class OrderLineAttributeSerializer(OscarHyperlinkedModelSerializer):
+class OrderLineAttributeSerializer(IZIHyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name='order-lineattributes-detail')
 
@@ -116,7 +116,7 @@ class OrderLineAttributeSerializer(OscarHyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class OrderLineSerializer(OscarHyperlinkedModelSerializer):
+class OrderLineSerializer(IZIHyperlinkedModelSerializer):
     "This serializer renames some fields so they match up with the basket"
 
     url = serializers.HyperlinkedIdentityField(view_name='order-lines-detail')
@@ -153,7 +153,7 @@ class OrderVoucherOfferSerializer(OrderOfferDiscountSerializer):
     voucher = VoucherSerializer(required=False)
 
 
-class OrderSerializer(OscarHyperlinkedModelSerializer):
+class OrderSerializer(IZIHyperlinkedModelSerializer):
     """
     The order serializer tries to have the same kind of structure as the
     basket. That way the same kind of logic can be used to display the order
@@ -333,7 +333,7 @@ class CheckoutSerializer(serializers.Serializer, OrderPlacementMixin):
         return default
 
 
-class UserAddressSerializer(OscarModelSerializer):
+class UserAddressSerializer(IZIModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='useraddress-detail')
     country = serializers.HyperlinkedRelatedField(
         view_name='country-detail', queryset=Country.objects)

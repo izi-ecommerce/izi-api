@@ -130,7 +130,7 @@ STATIC_URL = '/static/'
 
 SITE_ID = 1
 
-# Demosite, Restframework and Oscar specific settings
+# Demosite, Restframework and IZI specific settings
 
 HAYSTACK_CONNECTIONS = {
     'default': {

@@ -153,14 +153,14 @@ class ApiGatewayMiddleWare(MiddlewareMixin, IsApiRequest):
 
 class ApiBasketMiddleWare(BasketMiddleware, IsApiRequest):
     """
-    Use this middleware instead of Oscar's basket middleware if you
+    Use this middleware instead of IZI's basket middleware if you
     want to mix the api with regular izi views.
 
     Note that this middleware only works with MIDDLEWARE (Django > 1.10)
-    as MIDDLEWARE_CLASSES is deprecated and Oscar drops the MiddlewareMixin
+    as MIDDLEWARE_CLASSES is deprecated and IZI drops the MiddlewareMixin
     compatibility in BasketMiddleware since version 1.6
 
-    Oscar uses a cookie based session to store baskets for anonymous users, but
+    IZI uses a cookie based session to store baskets for anonymous users, but
     iziapi can not do that, because we don't want to put the burden
     of managing a cookie jar on iziapi clients that are not websites.
     """

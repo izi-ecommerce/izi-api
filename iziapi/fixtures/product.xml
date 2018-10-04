@@ -6,7 +6,7 @@
         <field to="catalogue.product" name="parent" rel="ManyToOneRel">
             <None/>
         </field>
-        <field type="CharField" name="title">Oscar T-shirt</field>
+        <field type="CharField" name="title">IZI T-shirt</field>
         <field type="SlugField" name="slug">izi-t-shirt</field>
         <field type="TextField" name="description">Hank</field>
         <field to="catalogue.productclass" name="product_class" rel="ManyToOneRel">1</field>

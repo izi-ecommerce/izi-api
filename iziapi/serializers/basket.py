@@ -5,8 +5,8 @@ from iziapi.basket import operations
 
 from iziapi.utils import (
     overridable,
-    OscarModelSerializer,
-    OscarHyperlinkedModelSerializer,
+    IZIModelSerializer,
+    IZIHyperlinkedModelSerializer,
     DrillDownHyperlinkedIdentityField
 )
 from iziapi.serializers.fields import TaxIncludedDecimalField
@@ -24,7 +24,7 @@ StockRecord = get_model('partner', 'StockRecord')
 Voucher = get_model('voucher', 'Voucher')
 
 
-class VoucherSerializer(OscarModelSerializer):
+class VoucherSerializer(IZIModelSerializer):
     class Meta:
         model = Voucher
         fields = overridable('IZIAPI_VOUCHER_FIELDS', default=(
@@ -81,13 +81,13 @@ class BasketSerializer(serializers.HyperlinkedModelSerializer):
             instance) + ['owner']
 
 
-class LineAttributeSerializer(OscarHyperlinkedModelSerializer):
+class LineAttributeSerializer(IZIHyperlinkedModelSerializer):
     class Meta:
         model = LineAttribute
         fields = '__all__'
 
 
-class BasketLineSerializer(OscarHyperlinkedModelSerializer):
+class BasketLineSerializer(IZIHyperlinkedModelSerializer):
     """
     This serializer computes the prices of this line by using the basket
     strategy.
@@ -133,7 +133,7 @@ class BasketLineSerializer(OscarHyperlinkedModelSerializer):
         # related prices immediately in the response
         operations.assign_basket_strategy(obj.basket, self.context['request'])
 
-        # Oscar stores the calculated discount in line._discount_incl_tax or
+        # IZI stores the calculated discount in line._discount_incl_tax or
         # line._discount_excl_tax when offers are applied. So by just
         # retrieving the line from the db you will loose this values, that's
         # why we need to get the line from the in-memory resultset here

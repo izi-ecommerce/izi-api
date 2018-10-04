@@ -56,7 +56,7 @@ Permissions
 -----------
 
 The Django REST Framework already supplies it's own defined permissions to make 
-sure that you can define which user can do what (PUT or just GET etc.). Oscar API 
+sure that you can define which user can do what (PUT or just GET etc.). IZI API 
 is using the following permissions, which you can use in your own views:
 
 .. automodule:: iziapi.permissions

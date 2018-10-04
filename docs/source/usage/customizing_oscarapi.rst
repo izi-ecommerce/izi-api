@@ -1,8 +1,8 @@
 ============================
-Customizing Oscar API
+Customizing IZI API
 ============================
 
-By using the `django-rest-framework`_ life has become easy, at least for customizing the Oscar API. Oscar API exists of a collection of views and serializers which can be overriden by following the steps below.
+By using the `django-rest-framework`_ life has become easy, at least for customizing the IZI API. IZI API exists of a collection of views and serializers which can be overriden by following the steps below.
 
 .. note::
     In izi you can `fork an app`_ to easily customize only the things you want to change.
@@ -10,9 +10,9 @@ By using the `django-rest-framework`_ life has become easy, at least for customi
 .. _`fork an app`: https://django-izi.readthedocs.io/en/releases-1.1/topics/fork_app.html
 .. _`django-rest-framework`: http://www.django-rest-framework.org
 
-Oscar API is using the basics of this so you can see Oscar API as one of the apps you customized just like in Oscar. Each Oscar app (or forked app) has a ``app.py`` which manages the url's to your custom views. 
+IZI API is using the basics of this so you can see IZI API as one of the apps you customized just like in IZI. Each IZI app (or forked app) has a ``app.py`` which manages the url's to your custom views. 
 
-In Oscar API the entry point of this is ``iziapi.app:RESTApiApplication``.
+In IZI API the entry point of this is ``iziapi.app:RESTApiApplication``.
 
 In your own app, you can extend this class, and override some of the urls to
 direct them to your own views. You can subclass any of the views in iziapi,
@@ -62,9 +62,9 @@ So, to modify some of the functionality in iziapi, do the following:
 .. literalinclude:: ../../../demosite/mycustomapi/urls.py
 
 
-The complete example above is available in the `Github repository of Oscar API`_ if you want to try it out.
+The complete example above is available in the `Github repository of IZI API`_ if you want to try it out.
 
-.. _`Github repository of Oscar API`: https://github.com/izi-ecommerce/izi-api/tree/master/demosite/
+.. _`Github repository of IZI API`: https://github.com/izi-ecommerce/izi-api/tree/master/demosite/
  
 
 

@@ -1,8 +1,8 @@
 =================
-Oscar API Signals
+IZI API Signals
 =================
 
-An overview of the signals defined by Oscar API.
+An overview of the signals defined by IZI API.
 
 ``iziapi_post_checkout``
 --------------------------

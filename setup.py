@@ -45,7 +45,7 @@ setup(
     # specify dependencies
     install_requires=[
         'setuptools',
-        'izi-core>=2.0.0',
+        'izi-core>=2.0.0', # Must have - for dev use git+
         'djangorestframework>=3.7',
         'six'
     ],

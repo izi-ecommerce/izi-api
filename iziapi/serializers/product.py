@@ -2,9 +2,9 @@ from rest_framework import serializers
 from django.utils.translation import ugettext as _
 
 from iziapi.utils import (
-    OscarModelSerializer,
+    IZIModelSerializer,
     overridable,
-    OscarHyperlinkedModelSerializer
+    IZIHyperlinkedModelSerializer
 )
 from izi.core.loading import get_model
 
@@ -20,13 +20,13 @@ Option = get_model('catalogue', 'Option')
 Partner = get_model('partner', 'Partner')
 
 
-class PartnerSerializer(OscarModelSerializer):
+class PartnerSerializer(IZIModelSerializer):
     class Meta:
         model = Partner
         fields = '__all__'
 
 
-class OptionSerializer(OscarHyperlinkedModelSerializer):
+class OptionSerializer(IZIHyperlinkedModelSerializer):
     class Meta:
         model = Option
         fields = overridable('IZIAPI_OPTION_FIELDS', default=(
@@ -34,7 +34,7 @@ class OptionSerializer(OscarHyperlinkedModelSerializer):
         ))
 
 
-class ProductAttributeValueSerializer(OscarModelSerializer):
+class ProductAttributeValueSerializer(IZIModelSerializer):
     name = serializers.CharField(source="attribute.name")
     code = serializers.CharField(source="attribute.code")
     value = serializers.SerializerMethodField()
@@ -69,7 +69,7 @@ class ProductAttributeValueSerializer(OscarModelSerializer):
             default=('name', 'value', 'code'))
 
 
-class ProductAttributeSerializer(OscarModelSerializer):
+class ProductAttributeSerializer(IZIModelSerializer):
     productattributevalue_set = ProductAttributeValueSerializer(many=True)
 
     class Meta:
@@ -79,7 +79,7 @@ class ProductAttributeSerializer(OscarModelSerializer):
             default=('name', 'productattributevalue_set'))
 
 
-class ProductImageSerializer(OscarModelSerializer):
+class ProductImageSerializer(IZIModelSerializer):
     class Meta:
         model = ProductImage
         fields = '__all__'
@@ -91,7 +91,7 @@ class AvailabilitySerializer(serializers.Serializer):
     message = serializers.CharField()
 
 
-class RecommmendedProductSerializer(OscarModelSerializer):
+class RecommmendedProductSerializer(IZIModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='product-detail')
 
     class Meta:
@@ -100,7 +100,7 @@ class RecommmendedProductSerializer(OscarModelSerializer):
             'IZIAPI_RECOMMENDED_PRODUCT_FIELDS', default=('url',))
 
 
-class BaseProductSerializer(OscarModelSerializer):
+class BaseProductSerializer(IZIModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='product-detail')
     stockrecords = serializers.HyperlinkedIdentityField(
         view_name='product-stockrecord-list')

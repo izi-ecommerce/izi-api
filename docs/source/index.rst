@@ -1,10 +1,10 @@
-.. Django Oscar API documentation master file, created by
+.. Django IZI API documentation master file, created by
    sphinx-quickstart on Wed Dec 23 16:04:47 2015.
 
 ================
-Django Oscar API
+Django IZI API
 ================
-This package provides a RESTful API for `izi-core`_, it's based on `django-rest-framework`_ and it exposes most of Oscar's functionality. You can find `the source code`_ on GitHub. If you have any questions or problems using Oscar API, please use the Github issuetracker.
+This package provides a RESTful API for `izi-core`_, it's based on `django-rest-framework`_ and it exposes most of IZI's functionality. You can find `the source code`_ on GitHub. If you have any questions or problems using IZI API, please use the Github issuetracker.
 
 .. _`izi-core`: https://github.com/izi-ecommerce/izi-core
 .. _`django-rest-framework`: http://www.django-rest-framework.org
@@ -13,7 +13,7 @@ This package provides a RESTful API for `izi-core`_, it's based on `django-rest-
 
 Requirements:
 -------------
-This version of Oscar API is compatbile with python 2.7 / 3.5 / 3.6 and the following django versions:
+This version of IZI API is compatbile with python 2.7 / 3.5 / 3.6 and the following django versions:
 
 Django 1.11:
 ~~~~~~~~~~~~
@@ -22,7 +22,7 @@ Django 1.11:
 
 Django 2.0 and 2.1:
 ~~~~~~~~~~~~~~~~~~~
-- Oscar 1.6
+- IZI 1.6
 - requires `djangorestframework>=3.7`
 - requires python 3.x
 
@@ -35,9 +35,9 @@ See `Travis`_ for the current tested platforms.
 
 Installation
 ------------
-Please see the installation instructions of `Oscar`_ to install Oscar and how to create your own project. Then you can install Oscar API by simply typing:
+Please see the installation instructions of `IZI`_ to install IZI and how to create your own project. Then you can install IZI API by simply typing:
 
-.. _`Oscar`: https://django-izi.readthedocs.io/en/releases-1.1/internals/getting_started.html
+.. _`IZI`: https://django-izi.readthedocs.io/en/releases-1.1/internals/getting_started.html
 
 .. code-block:: bash
 
@@ -64,7 +64,7 @@ You can use the iziapi application in an izi ecommerce site without any customiz
 
 Play around with the sandbox
 ----------------------------
-You can also install Oscar API from source and run the sandbox site to play around a bit. Make sure to create a virtualenv first.
+You can also install IZI API from source and run the sandbox site to play around a bit. Make sure to create a virtualenv first.
 
 .. code-block:: bash
 
@@ -82,7 +82,7 @@ Now you can browse the API at http://localhost:8000/api. Here you can actually u
 But I want to customise the standard serializers / views!
 ---------------------------------------------------------
 
-Probably you want this, because you already extended or changed Oscar's functionality by forking it's apps right? See :doc:`/usage/customizing_iziapi` for this.
+Probably you want this, because you already extended or changed IZI's functionality by forking it's apps right? See :doc:`/usage/customizing_iziapi` for this.
 
 
 .. toctree::

@@ -1,5 +1,5 @@
 ==================
-Oscar API Settings
+IZI API Settings
 ==================
 
 .. _main-settings-label:
@@ -18,13 +18,13 @@ can't access the API (they can read/write anything which is exposed by the API).
 Serializer settings
 ===================
 
-Most of the model serializers in Oscar API have a default set of fields to use in the REST API. If you customized the Oscar models you can reflect this customization by adding settings for this serializer.
+Most of the model serializers in IZI API have a default set of fields to use in the REST API. If you customized the IZI models you can reflect this customization by adding settings for this serializer.
 
 For example, the ``RecommendedProduct`` serializer is defined as following:
 
 .. code-block:: python
 
-    class RecommmendedProductSerializer(OscarModelSerializer):
+    class RecommmendedProductSerializer(IZIModelSerializer):
         url = serializers.HyperlinkedIdentityField(view_name='product-detail')
 
         class Meta:

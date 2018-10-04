@@ -1,5 +1,5 @@
 ================
-Django Oscar API
+Django IZI API
 ================
 
 This package provides a RESTful API for `izi-core`_.
@@ -24,7 +24,7 @@ This package provides a RESTful API for `izi-core`_.
 Usage
 =====
 
-To use the Oscar API application in an Oscar E-commerce site, follow these
+To use the IZI API application in an IZI E-commerce site, follow these
 steps:
 
 1. Install the `izi-api` package (``pip install izi-api``).

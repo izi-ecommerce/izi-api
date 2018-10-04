@@ -21,7 +21,7 @@ coverage:
 	coverage xml -i
 
 docs: install
-	pip install "Django>=1.11.0,<2.0"
+	pip install "Django>=1.11.0,<=2.2"
 	cd docs && make clean && make html
 
 clean_release: clean

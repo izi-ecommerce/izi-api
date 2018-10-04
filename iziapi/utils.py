@@ -29,7 +29,7 @@ def expand_field_mapping(extra_fields):
     return field_mapping
 
 
-class OscarSerializer(object):
+class IZISerializer(object):
     field_mapping = expand_field_mapping({
         izi.models.fields.NullCharField: serializers.CharField
     })
@@ -40,7 +40,7 @@ class OscarSerializer(object):
         speccified fields
         """
         fields = kwargs.pop('fields', None)
-        super(OscarSerializer, self).__init__(*args, **kwargs)
+        super(IZISerializer, self).__init__(*args, **kwargs)
         if fields:
             allowed = set(fields)
             existing = set(self.fields.keys())
@@ -49,7 +49,7 @@ class OscarSerializer(object):
 
     def to_native(self, obj):
         num_fields = len(self.get_fields())
-        native = super(OscarSerializer, self).to_native(obj)
+        native = super(IZISerializer, self).to_native(obj)
 
         if num_fields == 1:
             _, val = next(native.iteritems())
@@ -58,14 +58,14 @@ class OscarSerializer(object):
         return native
 
 
-class OscarModelSerializer(OscarSerializer, serializers.ModelSerializer):
+class IZIModelSerializer(IZISerializer, serializers.ModelSerializer):
     """
     Correctly map izi fields to serializer fields.
     """
 
 
-class OscarHyperlinkedModelSerializer(
-        OscarSerializer, serializers.HyperlinkedModelSerializer):
+class IZIHyperlinkedModelSerializer(
+        IZISerializer, serializers.HyperlinkedModelSerializer):
     """
     Correctly map izi fields to serializer fields.
     """

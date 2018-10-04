@@ -1,5 +1,5 @@
 ============================
-Use Oscar API out-of-the-box
+Use IZI API out-of-the-box
 ============================
 
 To use the iziapi application in an izi ecommerce site without overriding or customizing the default views and serializers just follow these steps:
@@ -21,7 +21,7 @@ To use the iziapi application in an izi ecommerce site without overriding or cus
 Middleware and mixed usage
 --------------------------
 
-There are some middleware classes shipped with Oscar API which can be useful for your project. For example, we have seen in practice that it can be useful to mix plain Oscar and the API (fill your basket with the API and use plain Oscar views for checkout).
+There are some middleware classes shipped with IZI API which can be useful for your project. For example, we have seen in practice that it can be useful to mix plain IZI and the API (fill your basket with the API and use plain IZI views for checkout).
 
 See the :doc:`/usage/middleware` section for more information.
 

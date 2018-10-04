@@ -73,7 +73,7 @@ To add a product to the basket we first need to get the available products:
         },
         {
             "id": 1,
-            "title": "Oscar T-shirt",
+            "title": "IZI T-shirt",
             "url": "http://localhost:8000/api/products/1/"
         }
     ]
@@ -107,7 +107,7 @@ You can fetch the detail of each product by following it's url:
         "product_class": "T-shirt",
         "recommended_products": [],
         "stockrecords": "http://localhost:8000/api/products/1/stockrecords/",
-        "title": "Oscar T-shirt",
+        "title": "IZI T-shirt",
         "url": "http://localhost:8000/api/products/1/"
     }
 
@@ -353,7 +353,7 @@ If you don't support anonymous checkouts you will have to login the user first
     }    
 
 .. note::
-    After you placed an order with the api, the basket is frozen. Oscar API has checks for this in the checkout view and won't let you checkout the same (or any frozen) basket again. At this stage an order is submitted in Oscar and you will have to implement the following steps regarding payment yourself. See the ``payment_url`` field above in the response. You can also use the regular Oscar checkout views if you like, take a look at the :ref:`mixed-usage-label` section.
+    After you placed an order with the api, the basket is frozen. IZI API has checks for this in the checkout view and won't let you checkout the same (or any frozen) basket again. At this stage an order is submitted in IZI and you will have to implement the following steps regarding payment yourself. See the ``payment_url`` field above in the response. You can also use the regular IZI checkout views if you like, take a look at the :ref:`mixed-usage-label` section.
 
 .. note::
     If your shipping methods depend in any way on the shipping address, you can
@@ -378,7 +378,7 @@ If you don't support anonymous checkouts you will have to login the user first
       }
 
 .. note::
-    In the checkout view of Oscar, the function ``handle_successful_order`` is called after placing an order. This sends the order confirmation message, flushes your session and sends the ``post_checkout`` signal. The Oscar API checkout view is not calling this method by design. If you would like to send a confirmation message (or other stuff you need to do) after placing an order you can subscribe to the ``iziapi_post_checkout`` signal, see :doc:`/usage/signals`.
+    In the checkout view of IZI, the function ``handle_successful_order`` is called after placing an order. This sends the order confirmation message, flushes your session and sends the ``post_checkout`` signal. The IZI API checkout view is not calling this method by design. If you would like to send a confirmation message (or other stuff you need to do) after placing an order you can subscribe to the ``iziapi_post_checkout`` signal, see :doc:`/usage/signals`.
 
 .. note::
     An extension on top of izi-api providing a more flexible checkout API with a pluggable payment methods
@@ -391,7 +391,7 @@ If you don't support anonymous checkouts you will have to login the user first
 
 Login the user
 --------------
-When you don't support anonymous checkouts you will need to login first. Oscar API comes with a simple login view for this:
+When you don't support anonymous checkouts you will need to login first. IZI API comes with a simple login view for this:
 
 .. code-block:: python
 
@@ -402,7 +402,7 @@ When you don't support anonymous checkouts you will need to login first. Oscar A
     response = session.post('http://localhost:8000/api/login/', json=data)
 
 .. note::
-    Custom User models with a different username field are supported. In Oscar API this field will be mapped to the 
+    Custom User models with a different username field are supported. In IZI API this field will be mapped to the 
     corresponding username field.
 
 When the authentication was succesful, your will receive a new (authenticated) sessionid, and the anonymous basket has been automatically merged with a (previous stored) basket of this specific user. You can see now that the owner is set in the basket:

@@ -117,7 +117,7 @@ class ProductTest(APITest):
         for field in default_fields:
             self.assertIn(field, self.response.body)
 
-        self.response.assertValueEqual('title', "Oscar T-shirt")
+        self.response.assertValueEqual('title', "IZI T-shirt")
 
     def test_product_attribute_entity(self):
         "Entity attribute tyoe should be supported by means of json method"
